@@ -6,4 +6,9 @@ import store from "./store";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap";
 
-createApp(App).use(store).mount("#app");
+// Apollo
+import * as apolloProvider from "./graphql/apollo.provider";
+
+const app = createApp(App);
+
+app.use(apolloProvider.apolloProvider).use(store).mount("#app");
